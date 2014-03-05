@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+# install
 file = node['redis']['rpmfile']
 
 cookbook_file "/tmp/#{file}" do
@@ -19,5 +20,16 @@ package "redis" do
   provider Chef::Provider::Package::Rpm
   source "/tmp/#{file}"
 end 
+
+# configuration (redis, sentinel)
+
+
+# service
+
+
+# sysctl configuration
+
+
+# limits.conf
 
 
