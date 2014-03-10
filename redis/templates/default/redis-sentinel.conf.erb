@@ -1,0 +1,12 @@
+port <%= node['redis-sentinel']['port'] %>
+bind 0.0.0.0
+daemonize yes
+logfile "<%= node['redis-sentinel']['logfile'] %>"
+pidfile "<%= node['redis-sentinel']['pidfile'] %>"
+dir "<%= node['redis']['dir'] %>"
+
+sentinel monitor <%= node['redis']['master']['name'] %> <%= node['redis']['master']['host'] %> <%= node['redis']['master']['port'] %> <%= node['redis-sentinel']['quorum'] %>
+sentinel down-after-milliseconds <%= node['redis']['master-name'] %> <%= node['redis-sentinel']['down-after-milliseconds'] %>
+sentinel failover-timeout <%= node['redis']['master-name'] %> <%= node['redis-sentinel']['failover-timeout'] %>
+sentinel parallel-syncs <%= node['redis']['master-name'] %> <%= node['redis-sentinel']['parallel-syncs'] %>
+
