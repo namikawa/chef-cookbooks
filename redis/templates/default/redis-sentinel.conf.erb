@@ -1,5 +1,5 @@
 port <%= node['redis-sentinel']['port'] %>
-bind 0.0.0.0
+bind <%= node['redis-sentinel']['bind'] %>
 daemonize yes
 logfile "<%= node['redis-sentinel']['logfile'] %>"
 pidfile "<%= node['redis-sentinel']['pidfile'] %>"

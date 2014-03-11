@@ -1,8 +1,17 @@
 default['redis']['rpmfile'] = "redis-2.8.7-1.el6.x86_64.rpm"
 
+default['redis']['pidfile'] = "/var/run/redis/redis.pid"
+default['redis']['port'] = "6379"
+default['redis']['tcp-backlog'] = "511"
+default['redis']['bind'] = "0.0.0.0"
+default['redis']['timeout'] = "0"
+default['redis']['tcp-keepalive'] = "0"
+default['redis']['loglevel'] = "notice"
+default['redis']['logfile'] = "/var/log/redis/redis.log"
 default['redis']['dir'] = "/var/lib/redis"
 
-default['redis-sentinel']['port']
+default['redis-sentinel']['port'] = "26379"
+default['redis-sentinel']['bind'] = "0.0.0.0"
 default['redis-sentinel']['logfile'] = "/var/log/redis/sentinel.log"
 default['redis-sentinel']['pidfile'] = "/var/run/redis/sentinel.pid"
 
