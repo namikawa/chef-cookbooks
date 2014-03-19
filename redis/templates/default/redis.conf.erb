@@ -11,11 +11,11 @@ tcp-keepalive <%= node['redis']['tcp-keepalive'] %>
 
 loglevel <%= node['redis']['loglevel'] %>
 logfile "<%= node['redis']['logfile'] %>"
-# syslog-enabled no
-# syslog-ident redis
-# syslog-facility local0
+syslog-enabled <%= node['redis']['syslog-enabled'] %>
+syslog-ident <%= node['redis']['syslog-ident'] %>
+syslog-facility <%= node['redis']['syslog-facility'] %>
 
-#databases 16
+databases <%= node['redis']['databases'] %>
 
 ################################ SNAPSHOTTING  ################################
 save 900 1
