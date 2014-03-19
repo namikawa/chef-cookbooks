@@ -15,6 +15,15 @@ default['redis']['syslog-ident'] = "redis"
 default['redis']['syslog-facility'] = "local0"
 default['redis']['databases'] = "16"
 
+default['redis']['save'] = [
+  "900 1",
+  "300 10",
+  "60 10000",
+]
+default['redis']['stop-writes-on-bgsave-error'] = "yes"
+default['redis']['rdbcompression'] = "yes"
+default['redis']['rdbchecksum'] = "yes"
+
 default['redis']['dir'] = "/var/lib/redis"
 
 ##### redis-sentinel.conf #####

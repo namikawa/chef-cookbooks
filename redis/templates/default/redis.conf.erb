@@ -18,13 +18,13 @@ syslog-facility <%= node['redis']['syslog-facility'] %>
 databases <%= node['redis']['databases'] %>
 
 ################################ SNAPSHOTTING  ################################
-save 900 1
-save 300 10
-save 60 10000
+<%- node['redis']['save'].each do |save| %>
+save <%= save %>
+<%- end %>
 
-stop-writes-on-bgsave-error yes
-rdbcompression yes
-rdbchecksum yes
+stop-writes-on-bgsave-error <%= node['redis']['stop-writes-on-bgsave-error'] %>
+rdbcompression <%= node['redis']['rdbcompression'] %>
+rdbchecksum <%= node['redis']['rdbcompression'] %>
 
 dbfilename "dump.rdb"
 dir "/var/lib/redis"
