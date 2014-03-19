@@ -23,8 +23,15 @@ default['redis']['save'] = [
 default['redis']['stop-writes-on-bgsave-error'] = "yes"
 default['redis']['rdbcompression'] = "yes"
 default['redis']['rdbchecksum'] = "yes"
-
+default['redis']['dbfilename'] = "dump.rdb"
 default['redis']['dir'] = "/var/lib/redis"
+
+# 認証を行う場合は、以下attributeの設定を行う
+# default['redis']['masterauth'] = "master-password"
+
+default['redis']['slave-serve-stale-data'] = "yes"
+default['redis']['slave-read-only'] = "yes"
+
 
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"

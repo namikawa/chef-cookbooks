@@ -24,16 +24,18 @@ save <%= save %>
 
 stop-writes-on-bgsave-error <%= node['redis']['stop-writes-on-bgsave-error'] %>
 rdbcompression <%= node['redis']['rdbcompression'] %>
-rdbchecksum <%= node['redis']['rdbcompression'] %>
+rdbchecksum <%= node['redis']['rdbchecksum'] %>
 
-dbfilename "dump.rdb"
-dir "/var/lib/redis"
+dbfilename "<%= node['redis']['dbfilename'] %>"
+dir "<%= node['redis']['dir'] %>"
 
 ################################# REPLICATION #################################
 # slaveof <masterip> <masterport>
-# masterauth <master-password>
-slave-serve-stale-data yes
-slave-read-only yes
+<%- if node['redis']['masterauth'] %>
+masterauth <%= node['redis']['masterauth'] %>
+<% end -%>
+slave-serve-stale-data <%= node['redis']['slave-serve-stale-data'] %>
+slave-read-only <%= node['redis']['slave-read-only'] %>
 
 # repl-ping-slave-period 10
 # repl-timeout 60
