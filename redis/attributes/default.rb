@@ -33,6 +33,9 @@ default['redis']['slave-serve-stale-data'] = "yes"
 default['redis']['slave-read-only'] = "yes"
 
 
+default['redis']['maxclients'] = "10000"
+default['redis']['maxmemory'] = "4gb"
+
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"
 default['redis-sentinel']['bind'] = "0.0.0.0"

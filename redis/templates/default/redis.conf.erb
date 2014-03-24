@@ -52,7 +52,7 @@ slave-priority 100
 # rename-command CONFIG ""
 
 ################################### LIMITS ####################################
-maxclients 10000
+maxclients <%= node['redis']['maxclients'] %>
 maxmemory <%= node['redis']['maxmemory'] %>
 # maxmemory-policy volatile-lru
 # maxmemory-samples 3
