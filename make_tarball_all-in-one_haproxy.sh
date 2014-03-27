@@ -10,9 +10,9 @@ mkdir -p ${TMP_DIR}/cookbooks/${REPO}
 cd ./${REPO}/
 git archive master | tar -x -C ${TMP_DIR}/cookbooks/${REPO}
 
-COUNT=$((`echo \`find ${TMP_DIR}/all-in-one_haproxy_${TODAY}-* | wc -l\`` + 1))
+COUNT=$((`echo \`find ${TMP_DIR}/${REPO}_${TODAY}-* | wc -l\`` + 1))
 
 cd ${TMP_DIR}
-tar czvf all-in-one_haproxy_${TODAY}-${COUNT}.tar.gz cookbooks/
+tar czvf ${REPO}_${TODAY}-${COUNT}.tar.gz cookbooks/
 rm -rf ${TMP_DIR}/cookbooks
 
