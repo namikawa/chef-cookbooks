@@ -3,10 +3,12 @@
 ### config
 TODAY=`date +%Y%m%d`
 TMP_DIR="/tmp"
+REPO="all-in-one_haproxy"
 
 ### exec
-mkdir -p ${TMP_DIR}/cookbooks
-git archive master | tar -x -C ${TMP_DIR}/cookbooks
+mkdir -p ${TMP_DIR}/cookbooks/${REPO}
+cd ./${REPO}/
+git archive master | tar -x -C ${TMP_DIR}/cookbooks/${REPO}
 
 COUNT=$((`echo \`find ${TMP_DIR}/all-in-one_haproxy_${TODAY}-* | wc -l\`` + 1))
 
