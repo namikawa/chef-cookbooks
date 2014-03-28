@@ -8,6 +8,10 @@
 #
 
 # install
+package "gperftools-libs" do
+  action :install
+end
+
 file = node['redis']['rpmfile']
 
 cookbook_file "/tmp/#{file}" do
@@ -21,11 +25,21 @@ package "redis" do
   source "/tmp/#{file}"
 end 
 
-# configuration (redis, sentinel)
+# configuration & service (redis, sentinel)
+%w{
+  redis
+  redis-sentinel
+}.each do |srv|
+  template "/etc/#{srv}.conf" do
+    source "#{srv}.conf.erb"
+    user "redis"
+    mode 0644
+  end
 
-
-# service
-
+  service srv do
+    action :disable
+  end
+end
 
 # sysctl configuration
 
