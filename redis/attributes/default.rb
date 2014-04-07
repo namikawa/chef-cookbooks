@@ -32,9 +32,10 @@ default['redis']['dir'] = "/var/lib/redis"
 default['redis']['slave-serve-stale-data'] = "yes"
 default['redis']['slave-read-only'] = "yes"
 
-
 default['redis']['maxclients'] = "10000"
-default['redis']['maxmemory'] = "4gb"
+
+# maxmemoryのattributeをNilとした場合、搭載メモリの70%を割り当てる設定を行う
+default['redis']['maxmemory'] = Nil
 
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"

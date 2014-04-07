@@ -25,6 +25,12 @@ package "redis" do
   source "/tmp/#{file}"
 end 
 
+# if "maxmemory" setting is nil, set the maxmemory automatically (70% of total memory)
+unless node[:redis][:maxmemory]
+  mem = (node[:memory][:total].to_s.delete('kB').to_i * 0.7 / 1024).round(0)
+  node.set[:redis][:maxmemory] = "#{mem}mb"
+end
+
 # configuration & service (redis, sentinel)
 %w{
   redis
