@@ -34,8 +34,8 @@ default['redis']['slave-read-only'] = "yes"
 
 default['redis']['maxclients'] = "10000"
 
-# maxmemoryのattributeをNilとした場合、搭載メモリの70%を割り当てる設定を行う
-default['redis']['maxmemory'] = Nil
+# maxmemoryのattributeをnilとした場合、搭載メモリの70%を割り当てる設定を行う
+default['redis']['maxmemory'] = nil
 
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"
