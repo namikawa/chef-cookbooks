@@ -51,5 +51,5 @@ end
 
 
 # limits.conf
-
+include_recipe 'limits::default'
 
