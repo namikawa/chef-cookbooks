@@ -32,6 +32,12 @@ default['redis']['dir'] = "/var/lib/redis"
 default['redis']['slave-serve-stale-data'] = "yes"
 default['redis']['slave-read-only'] = "yes"
 
+default['redis']['repl-ping-slave-period'] = "10"
+default['redis']['repl-disable-tcp-nodelay'] = "no"
+default['redis']['repl-backlog-size'] = "50mb"
+
+default['redis']['slave-priority'] = "100"
+
 default['redis']['maxclients'] = "10000"
 
 # maxmemoryのattributeをnilとした場合、搭載メモリの70%を割り当てる設定を行う

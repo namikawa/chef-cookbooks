@@ -37,13 +37,13 @@ masterauth <%= node['redis']['masterauth'] %>
 slave-serve-stale-data <%= node['redis']['slave-serve-stale-data'] %>
 slave-read-only <%= node['redis']['slave-read-only'] %>
 
-# repl-ping-slave-period 10
+repl-ping-slave-period <%= node['redis']['repl-ping-slave-period'] %>
 # repl-timeout 60
-repl-disable-tcp-nodelay no
-repl-backlog-size 50mb
+repl-disable-tcp-nodelay <%= node['redis']['repl-disable-tcp-nodelay'] %>
+repl-backlog-size <%= node['redis']['repl-backlog-size'] %>
 # repl-backlog-ttl 3600
 
-slave-priority 100
+slave-priority <%= node['redis']['slave-priority'] %>
 # min-slaves-to-write 3
 # min-slaves-max-lag 10
 
