@@ -48,7 +48,7 @@ end
 end
 
 # sysctl configuration
-
+include_recipe 'sysctl::default'
 
 # limits.conf
 include_recipe 'limits::default'
