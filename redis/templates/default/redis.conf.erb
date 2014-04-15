@@ -58,13 +58,13 @@ maxmemory <%= node['redis']['maxmemory'] %>
 # maxmemory-samples 3
 
 ############################## APPEND ONLY MODE ###############################
-appendonly no
-appendfilename "appendonly.aof"
-appendfsync everysec
-no-appendfsync-on-rewrite no
+appendonly <%= node['redis']['appendonly'] %>
+appendfilename "<%= node['redis']['appendfilename'] %>"
+appendfsync <%= node['redis']['appendfsync'] %>
+no-appendfsync-on-rewrite <%= node['redis']['no-appendfsync-on-rewrite'] %>
 
-auto-aof-rewrite-percentage 100
-auto-aof-rewrite-min-size 64mb
+auto-aof-rewrite-percentage <%= node['redis']['auto-aof-rewrite-percentage'] %>
+auto-aof-rewrite-min-size <%= node['redis']['auto-aof-rewrite-min-size'] %>
 
 ################################ LUA SCRIPTING  ###############################
 lua-time-limit 5000
