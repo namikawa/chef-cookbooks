@@ -29,7 +29,7 @@ default['redis']['dir'] = "/var/lib/redis"
 
 ### REPLICATION
 
-# 認証を行う場合は、以下attributeの設定を行う
+# レプリの認証を行う場合は、以下attributeの設定を行う
 # default['redis']['masterauth'] = "master-password"
 
 default['redis']['slave-serve-stale-data'] = "yes"
@@ -40,6 +40,11 @@ default['redis']['repl-disable-tcp-nodelay'] = "no"
 default['redis']['repl-backlog-size'] = "50mb"
 
 default['redis']['slave-priority'] = "100"
+
+### SECURITY
+
+# 認証を行う場合は、以下attributeの設定を行う
+# default['redis']['requirepass'] = "require-password"
 
 ### LIMITS
 default['redis']['maxclients'] = "10000"

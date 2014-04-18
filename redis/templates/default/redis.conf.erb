@@ -48,7 +48,9 @@ slave-priority <%= node['redis']['slave-priority'] %>
 # min-slaves-max-lag 10
 
 ################################## SECURITY ###################################
-# requirepass foobared
+<%- if node['redis']['requirepass'] %>
+requirepass <%= node['redis']['requirepass'] %>
+<% end -%>
 # rename-command CONFIG ""
 
 ################################### LIMITS ####################################
