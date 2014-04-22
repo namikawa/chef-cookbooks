@@ -69,11 +69,11 @@ auto-aof-rewrite-percentage <%= node['redis']['auto-aof-rewrite-percentage'] %>
 auto-aof-rewrite-min-size <%= node['redis']['auto-aof-rewrite-min-size'] %>
 
 ################################ LUA SCRIPTING  ###############################
-lua-time-limit 5000
+lua-time-limit <%= node['redis']['lua-time-limit'] %>
 
 ################################## SLOW LOG ###################################
-slowlog-log-slower-than 10000
-slowlog-max-len 128
+slowlog-log-slower-than <%= node['redis']['slowlog-log-slower-than'] %>
+slowlog-max-len <%= node['redis']['slowlog-max-len'] %>
 
 ############################# Event notification ##############################
 notify-keyspace-events ""

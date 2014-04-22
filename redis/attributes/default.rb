@@ -61,6 +61,13 @@ default['redis']['no-appendfsync-on-rewrite'] = "no"
 default['redis']['auto-aof-rewrite-percentage'] = "100"
 default['redis']['auto-aof-rewrite-min-size'] = "64mb"
 
+### LUA SCRIPTING
+default['redis']['lua-time-limit'] = "5000"
+
+### SLOW LOG
+default['redis']['slowlog-log-slower-than'] = "10000"
+default['redis']['slowlog-max-len'] = "128"
+
 
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"
