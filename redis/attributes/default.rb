@@ -52,6 +52,8 @@ default['redis']['maxclients'] = "10000"
 # maxmemoryのattributeをnilとした場合、搭載メモリの70%を割り当てる設定を行う
 default['redis']['maxmemory'] = nil
 
+default['redis']['maxmemory-policy'] = "volatile-lru"
+
 ### APPEND ONLY MODE
 default['redis']['appendonly'] = "no"
 default['redis']['appendfilename'] = "appendonly.aof"

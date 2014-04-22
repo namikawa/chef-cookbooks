@@ -56,7 +56,7 @@ requirepass <%= node['redis']['requirepass'] %>
 ################################### LIMITS ####################################
 maxclients <%= node['redis']['maxclients'] %>
 maxmemory <%= node['redis']['maxmemory'] %>
-# maxmemory-policy volatile-lru
+maxmemory-policy <%= node['redis']['maxmemory-policy'] %>
 # maxmemory-samples 3
 
 ############################## APPEND ONLY MODE ###############################
