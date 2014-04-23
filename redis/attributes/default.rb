@@ -73,9 +73,15 @@ default['redis']['slowlog-max-len'] = "128"
 ### Event notification
 default['redis']['notify-keyspace-events'] = ""
 
+### ADVANCED CONFIG
+default['redis']['hash-max-ziplist-entries'] = "512"
+default['redis']['hash-max-ziplist-value'] = "64"
+
+default['redis']['list-max-ziplist-entries'] = "512"
+default['redis']['list-max-ziplist-value'] = "64"
 
 
-##### redis-sentinel.conf #####
+########## redis-sentinel.conf ##########
 default['redis-sentinel']['port'] = "26379"
 default['redis-sentinel']['bind'] = "0.0.0.0"
 default['redis-sentinel']['logfile'] = "/var/log/redis/sentinel.log"

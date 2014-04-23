@@ -79,11 +79,11 @@ slowlog-max-len <%= node['redis']['slowlog-max-len'] %>
 notify-keyspace-events "<%= node['redis']['notify-keyspace-events'] %>"
 
 ############################### ADVANCED CONFIG ###############################
-hash-max-ziplist-entries 512
-hash-max-ziplist-value 64
+hash-max-ziplist-entries <%= node['redis']['hash-max-ziplist-entries'] %>
+hash-max-ziplist-value <%= node['redis']['hash-max-ziplist-value'] %>
 
-list-max-ziplist-entries 512
-list-max-ziplist-value 64
+list-max-ziplist-entries <%= node['redis']['list-max-ziplist-entries'] %>
+list-max-ziplist-value <%= node['redis']['list-max-ziplist-value'] %>
 
 set-max-intset-entries 512
 
