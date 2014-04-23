@@ -70,6 +70,10 @@ default['redis']['lua-time-limit'] = "5000"
 default['redis']['slowlog-log-slower-than'] = "10000"
 default['redis']['slowlog-max-len'] = "128"
 
+### Event notification
+default['redis']['notify-keyspace-events'] = ""
+
+
 
 ##### redis-sentinel.conf #####
 default['redis-sentinel']['port'] = "26379"

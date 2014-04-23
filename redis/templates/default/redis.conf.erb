@@ -76,7 +76,7 @@ slowlog-log-slower-than <%= node['redis']['slowlog-log-slower-than'] %>
 slowlog-max-len <%= node['redis']['slowlog-max-len'] %>
 
 ############################# Event notification ##############################
-notify-keyspace-events ""
+notify-keyspace-events "<%= node['redis']['notify-keyspace-events'] %>"
 
 ############################### ADVANCED CONFIG ###############################
 hash-max-ziplist-entries 512
