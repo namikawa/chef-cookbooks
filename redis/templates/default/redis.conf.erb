@@ -90,7 +90,7 @@ set-max-intset-entries <%= node['redis']['set-max-intset-entries'] %>
 zset-max-ziplist-entries <%= node['redis']['zset-max-ziplist-entries'] %>
 zset-max-ziplist-value <%= node['redis']['zset-max-ziplist-value'] %>
 
-activerehashing yes
+activerehashing <%= node['redis']['activerehashing'] %>
 
 client-output-buffer-limit normal 0 0 0
 client-output-buffer-limit slave 256mb 64mb 60

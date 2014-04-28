@@ -85,6 +85,8 @@ default['redis']['set-max-intset-entries'] = "512"
 default['redis']['zset-max-ziplist-entries'] = "128"
 default['redis']['zset-max-ziplist-value'] = "64"
 
+default['redis']['activerehashing'] = "yes"
+
 
 ########## redis-sentinel.conf ##########
 default['redis-sentinel']['port'] = "26379"
