@@ -87,6 +87,9 @@ default['redis']['zset-max-ziplist-value'] = "64"
 
 default['redis']['activerehashing'] = "yes"
 
+default['redis']['client-output-buffer-limit']['normal'] = "0 0 0"
+default['redis']['client-output-buffer-limit']['slave'] = "256mb 64mb 60"
+default['redis']['client-output-buffer-limit']['pubsub'] = "32mb 8mb 60"
 
 ########## redis-sentinel.conf ##########
 default['redis-sentinel']['port'] = "26379"
