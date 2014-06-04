@@ -96,7 +96,7 @@ client-output-buffer-limit normal <%= node['redis']['client-output-buffer-limit'
 client-output-buffer-limit slave <%= node['redis']['client-output-buffer-limit']['slave'] %>
 client-output-buffer-limit pubsub <%= node['redis']['client-output-buffer-limit']['pubsub'] %>
 
-hz 10
+hz <%= node['redis']['hz'] %>
 
-aof-rewrite-incremental-fsync yes
+aof-rewrite-incremental-fsync <%= node['redis']['aof-rewrite-incremental-fsync'] %>
 
