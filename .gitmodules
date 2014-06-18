@@ -1,6 +1,0 @@
-[submodule "sysctl"]
-	path = sysctl
-	url = git@github.com:onehealth-cookbooks/sysctl.git
-[submodule "limits"]
-	path = limits
-	url = https://github.com/jhujhiti/chef-limits.git
