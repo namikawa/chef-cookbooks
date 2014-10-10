@@ -1,20 +1,19 @@
 require_relative '../spec_helper'
 
-describe 'apache::default' do
+describe 'common-apache::default' do
   subject { ChefSpec::Runner.new.converge(described_recipe) }
 
-  # Write quick specs using `it` blocks with implied subjects
-  it { should do_something('...') }
-
-  # Write full examples using the `expect` syntax
-  it 'does something' do
-    expect(subject).to do_something('...')
+  it 'install' do
+    expect(subject).to install_package 'httpd-2.4.10-1.x86_64.rpm'
+    expect(subject).to install_package 'httpd-tools-2.4.10-1.x86_64.rpm'
+    expect(subject).to install_package 'mod_proxy_html-2.4.10-1.x86_64.rpm'
+    expect(subject).to install_package 'mod_ssl-2.4.10-1.x86_64.rpm'
   end
 
-  # Use an explicit subject
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+  it 'config' do
+  end
 
-  it 'does something' do
-    expect(chef_run).to do_something('...')
+  it 'service' do
   end
 end
+

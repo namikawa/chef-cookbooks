@@ -1,0 +1,14 @@
+Timeout <%= node['apache']['Timeout'] %>
+KeepAlive <%= node['apache']['KeepAlive'] %>
+MaxKeepAliveRequests <%= node['apache']['MaxKeepAliveRequests'] %>
+KeepAliveTimeout <%= node['apache']['KeepAliveTimeout'] %>
+UseCanonicalName Off
+AccessFileName .htaccess
+ServerTokens Prod
+ServerSignature Off
+TraceEnable Off
+HostnameLookups Off
+
+<IfModule reqtimeout_module>
+  RequestReadTimeout header=20-40,MinRate=500 body=20,MinRate=500
+</IfModule>

@@ -30,3 +30,36 @@ node['apache']['rpmfiles'].each do |file|
   end
 end
 
+# config
+template "/etc/httpd/conf/httpd.conf" do
+  source "etc/httpd/conf/httpd.conf.erb"
+  mode "0644"
+end
+
+%w{
+  httpd-default.conf
+  httpd-info.conf
+  httpd-mpm.conf
+  httpd-ssl.conf
+}.each do |file|
+  template "/etc/httpd/conf/extra/#{file}" do
+    source "etc/httpd/conf/extra/#{file}.erb"
+    mode "0644"
+  end
+end
+
+directory "/var/www/icons" do
+  recursive true
+  action :delete
+end
+
+file "/var/www/html/index.html" do
+  action :delete
+end
+
+# service
+service "httpd" do
+  action :disable
+end
+
+

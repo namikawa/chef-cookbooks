@@ -1,0 +1,17 @@
+<Location /server-status>
+    SetHandler server-status
+    Require ip 127
+    Require ip 10
+    Require ip 172.16.0.0/12
+    Require ip 192.168
+</Location>
+
+ExtendedStatus On
+
+<Location /server-info>
+    SetHandler server-info
+    Require ip 127
+    Require ip 10
+    Require ip 172.16.0.0/12
+    Require ip 192.168
+</Location>
