@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe 'common-apache::default' do
+describe 'apache::default' do
   subject { ChefSpec::Runner.new.converge(described_recipe) }
 
   it 'install' do
