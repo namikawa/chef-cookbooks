@@ -62,4 +62,3 @@ service "httpd" do
   action :disable
 end
 
-
