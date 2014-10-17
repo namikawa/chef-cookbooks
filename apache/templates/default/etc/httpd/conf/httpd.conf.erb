@@ -2,7 +2,7 @@ ServerRoot "/usr"
 Listen 80
 ServerName <%= node['ipaddress'] %>
 
-<%- for mod in node['apache']['LoadModule'] %>
+<%- node['apache']['LoadModule'].each do |mod| %>
 LoadModule <%= mod %>
 <%- end %>
 
