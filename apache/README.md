@@ -1,7 +1,7 @@
 apache Cookbook
 ===============
 
-Apache を稼働させるための Chef Cookbook。
+Apache HTTPD を稼働させるための Chef Cookbook。
 ちなみにまだ作成途中。
 
 Requirements
