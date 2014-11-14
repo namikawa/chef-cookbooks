@@ -46,3 +46,4 @@ default['apache']['server-info']['RequireIP'] = [
   "192.168.0.0/16",
 ]
 
+default['apache']['log']['delete']['interval'] = "+6"

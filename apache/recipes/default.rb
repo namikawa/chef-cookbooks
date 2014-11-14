@@ -62,3 +62,15 @@ service "httpd" do
   action :disable
 end
 
+# cron
+cron "compress logs" do
+  minute '5'
+  command "/bin/find /var/log/httpd -regextype posix-egrep -type f -mmin '+60' -regex '*.*[^gz|^pid]$' -exec /bin/gzip -9 {} \\;"
+end
+
+mtime = node['apache']['log']['delete']['interval']
+cron "delete logs" do
+  hour '5'
+  minute '30'
+  command "/bin/find /var/log/httpd -regextype posix-egrep -type f -mtime '#{mtime}' -regex '*.*[^pid]$' -exec rm -f {} \\;"
+end
