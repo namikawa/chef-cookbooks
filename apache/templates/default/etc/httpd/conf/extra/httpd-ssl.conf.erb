@@ -18,8 +18,8 @@ SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
     DocumentRoot "/var/www/html"
     ServerName <%= node['apache']['sslhost']['ServerName'] %>
     ServerAdmin you@example.com
-    ErrorLog "/var/log/httpd/error_log"
-    TransferLog "/var/log/httpd/access_log"
+    #ErrorLog "/var/log/httpd/error_log"
+    #TransferLog "/var/log/httpd/access_log"
 
     SSLEngine on
 
@@ -61,8 +61,8 @@ SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
          nokeepalive ssl-unclean-shutdown \
          downgrade-1.0 force-response-1.0
 
-    CustomLog "/var/log/httpd/ssl_request_log" \
-         "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+    #CustomLog "/var/log/httpd/ssl_request_log" \
+    #     "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 
     RewriteEngine On
     RewriteRule ^(.*) - [E=CLIENT_IP:%{REMOTE_ADDR},L]
