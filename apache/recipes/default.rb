@@ -53,8 +53,13 @@ directory "/var/www/icons" do
   action :delete
 end
 
-file "/var/www/html/index.html" do
-  action :delete
+%w{
+  /var/www/html/index.html
+  /etc/logrotate.d/httpd
+}.each do |file|
+  file file do
+    action :delete
+  end
 end
 
 # service
