@@ -71,6 +71,8 @@ SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
     RequestHeader <%= param %>
     <%- end %>
 
+    SetEnv proxy-nokeepalive 1
+
     ProxyAddHeaders On
     ProxyPass / <%= node['apache']['sslhost']['ProxyPass'] %>
     ProxyPassReverse / <%= node['apache']['sslhost']['ProxyPassReverse'] %>
