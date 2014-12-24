@@ -14,7 +14,7 @@ default['apache']['Group'] = "daemon"
 
 default['apache']['Timeout'] = "30"
 default['apache']['KeepAlive'] = "Off"
-default['apache']['MaxKeepAliveRequests'] = "100"
+default['apache']['MaxKeepAliveRequests'] = "150"
 default['apache']['KeepAliveTimeout'] = "2"
 
 default['apache']['mpm_event']['StartServers'] = "20"
@@ -36,7 +36,7 @@ default['apache']['sslhost']['SSLCertificateKeyFile'] = "/etc/httpd/conf/server.
 default['apache']['sslhost']['RequestHeader'] = [
   "set X_Forwarded_Proto 'https'",
 ]
-default['apache']['sslhost']['ProxyPass'] = "http://127.0.0.1:8000/ keepalive=On"
+default['apache']['sslhost']['ProxyPass'] = "http://127.0.0.1:8000/ retry=0 timeout=5"
 default['apache']['sslhost']['ProxyPassReverse'] = "http://127.0.0.1:8000/"
 
 default['apache']['server-info']['RequireIP'] = [
