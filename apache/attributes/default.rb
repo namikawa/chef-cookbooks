@@ -24,7 +24,7 @@ default['apache']['mpm_event']['MaxSpareThreads'] = "4000"
 default['apache']['mpm_event']['ThreadsPerChild'] = "200"
 default['apache']['mpm_event']['ThreadLimit'] = "200"
 default['apache']['mpm_event']['MaxRequestWorkers'] = "4000"
-default['apache']['mpm_event']['MaxConnectionsPerChild'] = "1000000"
+default['apache']['mpm_event']['MaxConnectionsPerChild'] = "10000000"
 
 #default['apache']['SSLSessionCache'] = "memcache:10.0.0.1:11211,10.0.0.2:11211"
 default['apache']['SSLSessionCacheTimeout'] = "300"
