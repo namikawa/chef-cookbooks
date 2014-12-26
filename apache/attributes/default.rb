@@ -26,6 +26,8 @@ default['apache']['mpm_event']['ThreadLimit'] = "200"
 default['apache']['mpm_event']['MaxRequestWorkers'] = "4000"
 default['apache']['mpm_event']['MaxConnectionsPerChild'] = "10000000"
 
+default['apache']['SSLCipherSuite'] = "AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:RC4-SHA:!aNULL:!MD5;"
+default['apache']['SSLProtocol'] = "all -SSLv3"
 #default['apache']['SSLSessionCache'] = "memcache:10.0.0.1:11211,10.0.0.2:11211"
 default['apache']['SSLSessionCacheTimeout'] = "300"
 
