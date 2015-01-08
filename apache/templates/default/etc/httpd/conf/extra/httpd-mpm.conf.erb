@@ -1,5 +1,5 @@
 <IfModule !mpm_netware_module>
-    PidFile "/var/run/httpd.pid"
+    PidFile "<%= node['apache']['PidFile'] %>"
 </IfModule>
 
 #<IfModule mpm_prefork_module>

@@ -17,6 +17,8 @@ default['apache']['KeepAlive'] = "Off"
 default['apache']['MaxKeepAliveRequests'] = "150"
 default['apache']['KeepAliveTimeout'] = "2"
 
+default['apache']['PidFile'] = "/var/run/httpd.pid"
+
 default['apache']['mpm_event']['StartServers'] = "20"
 default['apache']['mpm_event']['ServerLimit'] = "20"
 default['apache']['mpm_event']['MinSpareThreads'] = "4000"
