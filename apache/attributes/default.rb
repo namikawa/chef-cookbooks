@@ -33,6 +33,7 @@ default['apache']['SSLProtocol'] = "all -SSLv3"
 #default['apache']['SSLSessionCache'] = "memcache:10.0.0.1:11211,10.0.0.2:11211"
 default['apache']['SSLSessionCacheTimeout'] = "300"
 
+default['apache']['sslhost']['DocumentRoot'] = "/var/www/html"
 default['apache']['sslhost']['ServerName'] = "www.example.com:443"
 default['apache']['sslhost']['SSLCertificateFile'] = "/etc/httpd/conf/server.crt"
 default['apache']['sslhost']['SSLCertificateKeyFile'] = "/etc/httpd/conf/server.key"

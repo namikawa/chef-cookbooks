@@ -15,7 +15,7 @@ SSLSessionCache <%= node['apache']['SSLSessionCache'] %>
 SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
 
 <VirtualHost _default_:443>
-    DocumentRoot "/var/www/html"
+    DocumentRoot "<%= node['apache']['sslhost']['DocumentRoot'] %>"
     ServerName <%= node['apache']['sslhost']['ServerName'] %>
     ServerAdmin you@example.com
     #ErrorLog "/var/log/httpd/error_log"
