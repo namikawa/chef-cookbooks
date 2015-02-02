@@ -33,18 +33,18 @@ DocumentRoot "/var/www/html"
     Require all denied
 </Files>
 
-ErrorLog "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y%m%d_%H 3600 540"
+ErrorLog "<%= node['apache']['ErrorLog'] %>"
 LogLevel warn
 
 <IfModule log_config_module>
     LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined
-    LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    #LogFormat "%h %l %u %t \"%r\" %>s %b" common
 
-    <IfModule logio_module>
-        LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
-    </IfModule>
+    #<IfModule logio_module>
+    #    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
+    #</IfModule>
 
-    CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y%m%d_%H 3600 540" combined
+    CustomLog "<%= node['apache']['CustomLog'] %>" combined
 </IfModule>
 
 #<IfModule alias_module>

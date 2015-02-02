@@ -11,6 +11,9 @@ default['apache']['rpmfiles'] = %w{
 
 default['apache']['User'] = "daemon"
 default['apache']['Group'] = "daemon"
+default['apache']['ErrorLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y%m%d_%H 3600 540"
+default['apache']['CustomLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y%m%d_%H 3600 540"
+
 
 default['apache']['Timeout'] = "30"
 default['apache']['KeepAlive'] = "Off"
