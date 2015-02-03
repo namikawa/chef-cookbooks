@@ -34,7 +34,7 @@ DocumentRoot "/var/www/html"
 </Files>
 
 ErrorLog "<%= node['apache']['ErrorLog'] %>"
-LogLevel warn
+LogLevel <%= node['apache']['LogLevel'] %>
 
 <IfModule log_config_module>
     LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined
