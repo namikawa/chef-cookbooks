@@ -44,6 +44,7 @@ default['apache']['sslhost']['SSLCertificateKeyFile'] = "/etc/httpd/conf/server.
 default['apache']['sslhost']['RequestHeader'] = [
   "set X_Forwarded_Proto 'https'",
 ]
+default['apache']['sslhost']['ProxyAddHeaders'] = "On"
 default['apache']['sslhost']['ProxyPass'] = "http://127.0.0.1:8000/ retry=0 timeout=5"
 default['apache']['sslhost']['ProxyPassReverse'] = "http://127.0.0.1:8000/"
 

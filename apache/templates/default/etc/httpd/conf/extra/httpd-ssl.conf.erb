@@ -72,7 +72,7 @@ SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
 
     SetEnv proxy-nokeepalive 1
 
-    ProxyAddHeaders On
+    ProxyAddHeaders <%= node['apache']['sslhost']['ProxyAddHeaders'] %>
     ProxyPass / <%= node['apache']['sslhost']['ProxyPass'] %>
     ProxyPassReverse / <%= node['apache']['sslhost']['ProxyPassReverse'] %>
 </VirtualHost>
