@@ -75,5 +75,9 @@ SSLSessionCacheTimeout  <%= node['apache']['SSLSessionCacheTimeout'] %>
     ProxyAddHeaders <%= node['apache']['sslhost']['ProxyAddHeaders'] %>
     ProxyPass / <%= node['apache']['sslhost']['ProxyPass'] %>
     ProxyPassReverse / <%= node['apache']['sslhost']['ProxyPassReverse'] %>
+
+    <%- node['apache']['sslhost']['extra_param'].each do |ext| %>
+    <%= ext %>
+    <% end -%>
 </VirtualHost>
 

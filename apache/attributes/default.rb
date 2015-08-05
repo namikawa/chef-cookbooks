@@ -49,6 +49,8 @@ default['apache']['sslhost']['ProxyAddHeaders'] = "On"
 default['apache']['sslhost']['ProxyPass'] = "http://127.0.0.1:8000/ retry=0 timeout=5"
 default['apache']['sslhost']['ProxyPassReverse'] = "http://127.0.0.1:8000/"
 
+default['apache']['sslhost']['extra_param'] = %w{}
+
 default['apache']['server-info']['RequireIP'] = [
   "127.0.0.1/32",
   "10.0.0.0/8",
