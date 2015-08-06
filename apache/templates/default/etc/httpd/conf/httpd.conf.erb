@@ -104,7 +104,7 @@ Include /etc/httpd/conf/extra/httpd-ssl.conf
     SSLRandomSeed connect builtin
 </IfModule>
 
-Include /etc/httpd/conf.d/*.conf
+IncludeOptional /etc/httpd/conf.d/*.conf
 
 #<IfModule setenvif_module>
 #BrowserMatch "MSIE 10.0;" bad_DNT
