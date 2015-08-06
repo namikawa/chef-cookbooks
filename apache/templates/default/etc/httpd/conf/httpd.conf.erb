@@ -1,5 +1,5 @@
 ServerRoot "/usr"
-Listen 80
+Listen <%= node['apache']['Listen'] %>
 ServerName <%= node['ipaddress'] %>
 
 <%- node['apache']['LoadModule'].each do |mod| %>
@@ -11,7 +11,7 @@ LoadModule <%= mod %>
     Group <%= node['apache']['Group'] %>
 </IfModule>
 
-ServerAdmin you@example.com
+ServerAdmin <%= node['apache']['ServerAdmin'] %>
 
 <Directory />
     AllowOverride none

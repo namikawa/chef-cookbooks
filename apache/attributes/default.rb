@@ -9,8 +9,10 @@ default['apache']['rpmfiles'] = %w{
   mod_ssl-2.4.16-1.x86_64.rpm
 }
 
+default['apache']['Listen'] = "80"
 default['apache']['User'] = "daemon"
 default['apache']['Group'] = "daemon"
+default['apache']['ServerAdmin'] = "you@example.com"
 default['apache']['ErrorLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y%m%d_%H 3600 540"
 default['apache']['CustomLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y%m%d_%H 3600 540"
 default['apache']['LogLevel'] = "warn"
