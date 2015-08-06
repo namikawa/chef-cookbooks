@@ -37,14 +37,13 @@ ErrorLog "<%= node['apache']['ErrorLog'] %>"
 LogLevel <%= node['apache']['LogLevel'] %>
 
 <IfModule log_config_module>
-    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined
-    #LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    LogFormat <%= node['apache']['LogFormat'] %>
 
     #<IfModule logio_module>
     #    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
     #</IfModule>
 
-    CustomLog "<%= node['apache']['CustomLog'] %>" combined
+    CustomLog <%= node['apache']['CustomLog'] %>
 </IfModule>
 
 #<IfModule alias_module>

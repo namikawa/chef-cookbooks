@@ -14,7 +14,8 @@ default['apache']['User'] = "daemon"
 default['apache']['Group'] = "daemon"
 default['apache']['ServerAdmin'] = "you@example.com"
 default['apache']['ErrorLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y%m%d_%H 3600 540"
-default['apache']['CustomLog'] = "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y%m%d_%H 3600 540"
+default['apache']['CustomLog'] = '"|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y%m%d_%H 3600 540" combined'
+default['apache']['LogFormat'] = '"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined'
 default['apache']['LogLevel'] = "warn"
 default['apache']['EnableSendfile'] = "on"
 
