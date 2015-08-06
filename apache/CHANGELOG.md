@@ -5,9 +5,11 @@ This file is used to list changes made in each version of the apache cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of apache
+- [2015/08/06 Y.Namikawa] - Upgrade Apache version. (2.4.10 -> 2.4.16)
+- [2015/08/06 Y.Namikawa] - Upgrade apr & apr-util packages.
 
-- - -
-Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 
-The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.
+0.1.0
+-----
+- [2015/02/06 Y.Namikawa] - Initial release of apache cookbook.
+

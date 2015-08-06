@@ -1,12 +1,12 @@
 # check to available packages in "file/default/rpms"
 default['apache']['rpmfiles'] = %w{
-  apr-1.5.1-3.el6.x86_64.rpm
-  apr-util-1.5.3-3.el6.x86_64.rpm
+  apr-1.5.2-2.el6.x86_64.rpm
+  apr-util-1.5.4-2.el6.x86_64.rpm
   distcache-1.4.5-23.x86_64.rpm
-  httpd-2.4.10-1.x86_64.rpm
-  httpd-tools-2.4.10-1.x86_64.rpm
-  mod_proxy_html-2.4.10-1.x86_64.rpm
-  mod_ssl-2.4.10-1.x86_64.rpm
+  httpd-2.4.16-1.x86_64.rpm
+  httpd-tools-2.4.16-1.x86_64.rpm
+  mod_proxy_html-2.4.16-1.x86_64.rpm
+  mod_ssl-2.4.16-1.x86_64.rpm
 }
 
 default['apache']['User'] = "daemon"
