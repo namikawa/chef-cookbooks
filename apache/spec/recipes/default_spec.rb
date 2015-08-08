@@ -4,10 +4,10 @@ describe 'apache::default' do
   let (:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   it 'install' do
-    expect(chef_run).to install_package 'httpd-2.4.10-1.x86_64.rpm'
-    expect(chef_run).to install_package 'httpd-tools-2.4.10-1.x86_64.rpm'
-    expect(chef_run).to install_package 'mod_proxy_html-2.4.10-1.x86_64.rpm'
-    expect(chef_run).to install_package 'mod_ssl-2.4.10-1.x86_64.rpm'
+    expect(chef_run).to install_package 'httpd-2.4.16-1.x86_64.rpm'
+    expect(chef_run).to install_package 'httpd-tools-2.4.16-1.x86_64.rpm'
+    expect(chef_run).to install_package 'mod_proxy_html-2.4.16-1.x86_64.rpm'
+    expect(chef_run).to install_package 'mod_ssl-2.4.16-1.x86_64.rpm'
   end
 
   it 'config' do
