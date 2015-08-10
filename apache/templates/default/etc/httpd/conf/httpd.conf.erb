@@ -79,7 +79,7 @@ LogLevel <%= node['apache']['LogLevel'] %>
 
 #MaxRanges unlimited
 
-#EnableMMAP off
+EnableMMAP <%= node['apache']['EnableMMAP'] %>
 EnableSendfile <%= node['apache']['EnableSendfile'] %>
 
 Include /etc/httpd/conf/extra/httpd-mpm.conf
