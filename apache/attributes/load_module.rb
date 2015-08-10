@@ -96,7 +96,7 @@ default['apache']['LoadModule'] = [
   "status_module lib64/httpd/modules/mod_status.so",
   "autoindex_module lib64/httpd/modules/mod_autoindex.so",
 #  "asis_module lib64/httpd/modules/mod_asis.so",
-#  "info_module lib64/httpd/modules/mod_info.so",
+  "info_module lib64/httpd/modules/mod_info.so",
 #  "suexec_module lib64/httpd/modules/mod_suexec.so",
 #  "cgid_module lib64/httpd/modules/mod_cgid.so",
 #  "dav_fs_module lib64/httpd/modules/mod_dav_fs.so",

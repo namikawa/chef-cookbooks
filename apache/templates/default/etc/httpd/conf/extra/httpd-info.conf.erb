@@ -7,9 +7,10 @@
 
 ExtendedStatus On
 
-#<Location /server-info>
-#    SetHandler server-info
-#    <%- node['apache']['server-info']['RequireIP'].each do |ip| %>
-#    Require ip <%= ip %>
-#    <%- end %>
-#</Location>
+<Location /server-info>
+    SetHandler server-info
+    <%- node['apache']['server-info']['RequireIP'].each do |ip| %>
+    Require ip <%= ip %>
+    <%- end %>
+</Location>
+
