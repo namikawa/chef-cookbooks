@@ -18,7 +18,7 @@ ServerAdmin <%= node['apache']['ServerAdmin'] %>
     Require all denied
 </Directory>
 
-DocumentRoot "/var/www/html"
+DocumentRoot "<%= node['apache']['DocumentRoot'] %>"
 <Directory "/var/www/html">
     Options FollowSymLinks
     AllowOverride None
