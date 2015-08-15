@@ -28,6 +28,7 @@
     ThreadLimit             <%= node['apache']['mpm_event']['ThreadLimit'] %>
     MaxRequestWorkers       <%= node['apache']['mpm_event']['MaxRequestWorkers'] %>
     MaxConnectionsPerChild  <%= node['apache']['mpm_event']['MaxConnectionsPerChild'] %>
+    MaxMemFree              <%= node['apache']['mpm_event']['MaxMemFree'] %>
 </IfModule>
 
 #<IfModule mpm_netware_module>
